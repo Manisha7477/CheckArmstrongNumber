@@ -1,0 +1,32 @@
+package com.kodnest.looping;
+import java.util.Scanner;
+public class ArmStrong {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Mani! Enter the n value: ");
+		int number = scan.nextInt();
+		checkArmstrongNumber(number);
+	}
+		
+		static void checkArmstrongNumber(int number) {
+		int originalnumber = number;
+		int count=0;
+		while(number>0) {
+			number = number/10;
+			count++;
+		}
+		int sum =0;
+		//int count=3;
+		number = originalnumber;
+		while(number>0 || number >9 ){
+			int rem = number%10;
+			sum =sum + (int)Math.pow(rem, count);
+			number = number/10;
+		}
+		if(sum==originalnumber) {
+			System.out.println(originalnumber+" is a Armstrog number.");
+		}
+		else {
+			System.out.println(originalnumber+" is not a Armstrong number.");
+		}
+		}
